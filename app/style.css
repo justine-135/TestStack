@@ -120,7 +120,7 @@ button:focus {
 }
 
 .side-navbar.open {
-	transform: translateX(0%);
+	transform: translateX(2%);
 }
 
 .main-content {
@@ -237,10 +237,6 @@ button:focus {
 	top: 0;
 	padding-top: 4.3125rem;
 	width: 14.735rem;
-}
-
-.post-menu.open {
-	transform: translateX(-2%);
 }
 
 .post-container {
