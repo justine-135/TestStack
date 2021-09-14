@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!--Include jquery-->
+		<script
+			src="https://code.jquery.com/jquery-3.5.1.min.js"
+			crossorigin="anonymous"
+		></script>
+
+		<!--Include Bootstrap4-->
+		<script
+			src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+			integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+			crossorigin="anonymous"
+		></script>
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+			crossorigin="anonymous"
+		/>
+		<script
+			src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+			integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+			crossorigin="anonymous"
+		></script>
+
+		<!--Include Summernote-->
+		<link
+			href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css"
+			rel="stylesheet"
+		/>
+		<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+		<!--Include Font awesome-->
+		<link type="text/css" href="path/to/bootstrap/css/bootstrap.min.css" />
+		<link
+			rel="stylesheet"
+			href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+			integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+			crossorigin="anonymous"
+		/>
+
+		<!--Styling-->
+		<link rel="stylesheet" href="./app/style.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<!-- Top Navbar-->
+		<navbar
+			class="
+				navbar
+				container-fluid
+				d-flex
+				align-items-center
+				justify-content-center
+				position-fixed
+				w-100
+			"
+		>
+			<div class="navbar-components d-flex align-items-center">
+				<!-- Mobile menu icon-->
+				<button class="hamburger mr-2 d-flex">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				<div class="logo">
+					<h1 class="fs-2 m-0">Logo</h1>
+				</div>
+
+				<!-- Search icon on mobile-->
+				<button
+					type="button"
+					class="mobile-search-btn btn btn-secondary d-block d-md-none me-2"
+				>
+					<i class="fas fa-search"></i>
+				</button>
+
+				<!-- Search bar-->
+				<div class="search input-group px-2">
+					<button type="button" class="search-btn btn btn-secondary">
+						<i class="fas fa-search"></i>
+					</button>
+					<input
+						type="text"
+						class="search-bar form-control"
+						aria-label="Text input with segmented dropdown button"
+					/>
+				</div>
+
+				<!-- Links-->
+				<div class="links d-flex align-items-center justify-content-between">
+					<a href="">Link1</a>
+					<a href="">Link2</a>
+					<a href="">Link3</a>
+					<a href="">Link4</a>
+				</div>
+			</div>
+		</navbar>
+
+		<!--For navbar display-->
+		<div class="nav-display"></div>
+
+		<section
+			class="post-container container-fluid pb-5 px-md-0 position-relative"
+		>
+			<!--Sidebar-->
+			<aside class="side-navbar post-menu position-fixed start-0">
+				Left side-nav
+			</aside>
+
+			<span class="ask-header d-block fs-3 my-3">Ask your question</span>
+
+			<div
+				class="
+					ask-ads-flex
+					flex-column flex-md-row
+					d-flex
+					justify-content-between
+					align-items-start
+				"
+			>
+				<!--Question form-->
+				<form class="ask-container g-col-4 p-3 me-3 mb-3">
+					<div class="title-container mb-3">
+						<!--Title-->
+						<span class="fs-5">Title</span>
+						<p class="fs-6 my-0">
+							Be specific and imagine you're asking to another person
+						</p>
+						<div class="input-group">
+							<input
+								type="text"
+								aria-label="Title input"
+								class="form-control"
+							/>
+						</div>
+					</div>
+
+					<!--Body-->
+					<div class="body-container mb-3">
+						<span class="fs-5">Body</span>
+						<p class="fs-6 my-0">
+							Include all information someone would need to answer your question
+						</p>
+
+						<!--Editable text-->
+						<textarea id="summernote"></textarea>
+					</div>
+
+					<!--Tags input-->
+					<div class="tags-container mb-3">
+						<span class="fs-5">Tags</span>
+						<p class="fs-6 my-0">Add up to 5 tags to describe your question</p>
+						<div class="tags-input input-group d-flex align-items-center">
+							<div class="tags-input-container"></div>
+							<input
+								type="text"
+								aria-label="Tags"
+								class="main-input-tag form-control"
+							/>
+						</div>
+					</div>
+
+					<button class="btn btn-primary">Review your question</button>
+				</form>
+
+				<!--Empty container-->
+				<div class="ads-container">ads</div>
+			</div>
+		</section>
+
+		<script>
+			$("#summernote").summernote({
+				placeholder: "Ask something ...",
+				tabsize: 2,
+				minHeight: 120, // set minimum height of editor
+				maxHeight: null, // set maximum height of editor
+			});
+			const tagInput = document.querySelector(".main-input-tag");
+			const tagContainer = document.querySelector(".tags-input-container");
+
+			//Create tag links
+			tagInput.addEventListener("keyup", (e) => {
+				if (tagContainer.childElementCount !== 5) {
+					if (e.keyCode == 32) {
+						// if (e.target.value !== "") {
+						// 	console.log(e.target.value);
+						// }
+						//your code
+						// console.log(e.target.value);
+						let tag = document.createElement("span");
+						tag.setAttribute("class", "tag-btn");
+						tag.innerHTML = e.target.value + `<i class="fas fa-times"></i>`;
+						tagContainer.append(tag);
+						e.target.value = "";
+
+						removeTagHandler();
+					}
+				}
+			});
+
+			//Remove tag links
+			const removeTagHandler = () => {
+				const removableTag = document.querySelectorAll(".tag-btn");
+				console.log(removableTag);
+
+				for (let i = 0; i < removableTag.length; i++) {
+					removableTag[i].addEventListener("click", () => {
+						removableTag[i].remove();
+					});
+				}
+			};
+		</script>
+
+		<script src="./app/app.js"></script>
+	</body>
+</html>
