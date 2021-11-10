@@ -27,29 +27,184 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+    <!--Include Fontawesome-->
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="app/style.css" />
     <title>Document</title>
   </head>
   <body>
-    <header class="header-search p-3">
-      <div
-        class="
-          title-flex
-          d-flex
-          align-items-center
-          justify-content-between
-          flex-column flex-sm-row
-        "
-      >
-        <span class="title fs-2 text"> Search Results </span>
+    <!-- Top Navbar-->
+    <navbar
+      class="
+        navbar
+        container-fluid
+        d-flex
+        align-items-center
+        justify-content-center
+        position-fixed
+        w-100
+      "
+    >
+      <div class="navbar-components d-flex align-items-center">
+        <!-- Mobile menu icon-->
+        <button class="hamburger mr-2 d-flex d-md-none">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="logo">
+          <h1 class="fs-2 m-0">Logo</h1>
+        </div>
+
+        <!-- Search icon on mobile-->
         <button
           type="button"
-          class="btn btn-primary ask-btn"
-          onclick="window.location.href='./post-question.html'"
+          class="mobile-search-btn btn btn-secondary d-block d-md-none me-2"
         >
-          Ask question
+          <i class="fas fa-search"></i>
         </button>
+
+        <!-- Search bar-->
+        <div class="search input-group px-2">
+          <button type="button" class="search-btn btn btn-secondary">
+            <i class="fas fa-search"></i>
+          </button>
+          <input
+            type="text"
+            class="search-bar form-control"
+            aria-label="Text input with segmented dropdown button"
+          />
+        </div>
+
+        <!-- Links-->
+        <div class="links d-flex align-items-center justify-content-between">
+          <a href="">Link1</a>
+          <a href="">Link2</a>
+          <a href="">Link3</a>
+          <a href="">Link4</a>
+        </div>
       </div>
-    </header>
+    </navbar>
+
+    <div
+      class="
+        search-container
+        d-flex
+        justify-content-center
+        mx-auto
+        flex-column flex-md-row
+      "
+    >
+      <aside class="side-navbar d-flex ms-auto">Left side-nav</aside>
+      <main class="main-search w-100">
+        <header class="header-search p-3">
+          <div
+            class="title-flex d-flex align-items-center justify-content-between"
+          >
+            <div class="title fs-3 text">Search Result</div>
+            <button
+              type="button"
+              class="btn btn-primary ask-btn"
+              onclick="window.location.href='./post-question.html'"
+            >
+              Ask question
+            </button>
+          </div>
+          <div class="result-span">
+            Result for
+            <span class="result-result">Lorem</span>
+          </div>
+          <div
+            class="
+              result-control
+              d-flex
+              justify-content-between
+              flex-column flex-sm-row
+            "
+          >
+            <div class="result-count-container mb-3">
+              <span class="result-count">0</span> results
+            </div>
+            <div class="result-btn-controls d-flex">
+              <button class="relevance-btn">Relevance</button>
+              <button class="newest-btn">Newest</button>
+              <div class="more-drop">
+                <button class="more-drop-btn d-flex align-items-center">
+                  More <i class="fas fa-sort-down"></i>
+                </button>
+                <div class="drop-option d-none flex-column">
+                  <button>Active</button>
+                  <button>Votes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="main-search-items-container mb-3">
+          <!-- This the result from search -->
+          <div class="search-item w-100 d-flex py-2 mb-3">
+            <div class="search-vote-answers-container">
+              <div
+                class="
+                  search-vote-container
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <span class="search-vote-count">0</span>
+                votes
+              </div>
+              <div
+                class="
+                  search-answer-container
+                  d-flex
+                  flex-column
+                  align-items-center
+                  pt-3
+                "
+              >
+                <span class="search-answers-count">0</span>
+                answers
+              </div>
+            </div>
+            <div class="main-search-item px-3">
+              <div class="search-item-title-container">
+                Q:
+                <span class="search-item-title"
+                  >Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Ipsa, sint!</span
+                >
+              </div>
+              <p class="search-item-question py-1">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel
+                delectus rem assumenda, culpa laborum eaque quasi? Doloribus
+                illo iure beatae deleniti saepe ipsam, eaque veritatis facilis
+                in architecto. Deserunt placeat id numquam iste sint modi nemo,
+                incidunt ut porro quod quos. Sequi mollitia minima atque optio
+                consequatur officia, excepturi cupiditate.
+              </p>
+              <div class="tags search-tags d-flex align-items-center w-100">
+                <a href="">tag1</a>
+                <a href="">tag2</a>
+                <a href="">tag3</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <div class="col2 p-3">
+        <div class="ads"></div>
+      </div>
+    </div>
+
+    <script src="./app/app.js"></script>
+    <script src="./app/search-filter.js"></script>
   </body>
 </html>
