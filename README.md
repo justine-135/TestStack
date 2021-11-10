@@ -1,8 +1,6 @@
 # TestStack - Stackoverflow inspired
 
-A Stackoverflow inspired design by my client.
-
-Also my first ever real world front-end development project!
+Stackoverflow inspired front-end web app
 
 # Bootstrap 4
 
