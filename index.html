@@ -110,7 +110,7 @@
       "
     >
       <aside class="side-navbar d-flex ms-auto">
-        <div class="side-menu">menu menu</div>
+        <div class="side-menu d-flex ms-auto">menu menu</div>
       </aside>
       <main class="main-content d-flex flex-column container-fluid">
         <!-- Title of question-->
@@ -154,11 +154,11 @@
             >
               <!-- Arrow UP and DOWN-->
               <div class="vote d-flex flex-column align-items-center">
-                <button class="vote-up">
+                <button class="vote-up-question">
                   <i class="fas fa-caret-up fa-3x"></i>
                 </button>
                 <span class="fs-3 vote-count">0</span>
-                <button class="vote-down">
+                <button class="vote-down-question">
                   <i class="fas fa-caret-down fa-3x"></i>
                 </button>
               </div>
@@ -199,19 +199,21 @@
               </div>
             </div>
 
-            <!-- Answers -->
+            <!-- Answers container -->
             <div class="answers-forum-container mt-5">
               <div class="answers-count">
-                <span class="answer-count-result">0</span> answers
+                <span class="all-answer-count">0</span>
+                <span class="answer-label"> Answer</span>
               </div>
               <div class="answers-forum">
+                <!-- Answer -->
                 <div class="answers-item w-100 d-flex mt-3">
                   <div class="vote d-flex flex-column align-items-center">
-                    <button class="vote-up">
+                    <button class="vote-up-answer">
                       <i class="fas fa-caret-up fa-3x"></i>
                     </button>
-                    <span class="fs-3 vote-count">0</span>
-                    <button class="vote-down">
+                    <span class="fs-3 answer-count">0</span>
+                    <button class="vote-down-answer">
                       <i class="fas fa-caret-down fa-3x"></i>
                     </button>
                   </div>
@@ -247,31 +249,10 @@
         minHeight: 120, // set minimum height of editor
         maxHeight: null, // set maximum height of editor
       });
-      const upVote = document.querySelector(".vote-up");
-      const downVote = document.querySelector(".vote-down");
-      const voteCount = document.querySelector(".vote-count");
-
-      let count = 0;
-      voteCount.innerHTML = count;
-
-      upVote.addEventListener("click", () => {
-        upVote.childNodes[1].style.color = "orange";
-        downVote.childNodes[1].style.color = "rgb(197, 197, 197)";
-        voteCount.innerHTML = count + 1;
-        upVote.disabled = true;
-        downVote.disabled = false;
-      });
-
-      downVote.addEventListener("click", () => {
-        downVote.childNodes[1].style.color = "orange";
-        upVote.childNodes[1].style.color = "rgb(197, 197, 197)";
-        voteCount.innerHTML = count - 1;
-        downVote.disabled = true;
-        upVote.disabled = false;
-      });
     </script>
 
     <script src="./app/app.js"></script>
     <script src="./app/post-answer.js"></script>
+    <script src="./app/vote.js"></script>
   </body>
 </html>
