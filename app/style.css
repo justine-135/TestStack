@@ -116,8 +116,21 @@ button:focus {
   height: 100vh;
   width: 30%;
   background-color: white;
-  border-right: 1px solid rgb(192, 192, 192);
+
   transition: 200ms ease-in-out;
+  position: relative;
+}
+
+.side-menu {
+  height: 100%;
+  position: fixed;
+  width: 23%;
+  border-right: 1px solid rgb(192, 192, 192);
+  max-width: 294px;
+}
+
+.post-question-menu {
+  width: 100%;
 }
 
 .side-navbar-search {
@@ -152,6 +165,10 @@ button:focus {
 
 .questions {
   height: auto;
+}
+
+.answers-count {
+  font-size: 1.25rem;
 }
 
 .col1 {
@@ -242,7 +259,7 @@ button:focus {
   z-index: 2;
   transform: translateX(-250%);
   top: 0;
-  padding-top: 4.3125rem;
+  padding-top: 3.313rem;
   width: 14.735rem;
 }
 
@@ -434,12 +451,6 @@ button:focus {
     padding-left: 0;
     position: relative;
   }
-  .post-container {
-    width: 100%;
-  }
-  .post-menu.open {
-    transform: translateX(-5%);
-  }
 
   .ask-btn {
     margin-top: 0.625rem;
@@ -450,12 +461,23 @@ button:focus {
     transform: translateX(-250%);
     z-index: 2;
     top: 0;
-    padding-top: 3.75rem;
+    padding-top: 3.37rem;
     width: 14.735rem;
+  }
+
+  .side-menu {
+    width: 100%;
   }
 
   .side-navbar.open {
     transform: translateX(0%);
+  }
+
+  .post-container {
+    width: 100%;
+  }
+  .post-menu.open {
+    transform: translateX(-1%);
   }
 
   .col2 {
